@@ -28,4 +28,13 @@ public class FirstApiTest extends BaseTest {
                 .then()
                 .statusCode(404);            // ожидаем 404
     }
+    @Test
+    void shouldGetUserList() {
+        given()
+                .when()
+                .get("/users?page=2")
+                .then()
+                .statusCode(200)
+                .body("data.size()", equalTo(6));
+    }
 }
