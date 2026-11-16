@@ -1,4 +1,4 @@
-package learningJavaQa;
+package com.learning.qa;
 
 
 import io.restassured.RestAssured;

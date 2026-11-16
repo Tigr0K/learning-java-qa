@@ -1,6 +1,5 @@
-package learningJavaQa;
+package com.learning.qa;
 
-import io.restassured.RestAssured;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
