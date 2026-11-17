@@ -7,6 +7,6 @@ public abstract class ApiRequest {
     }
     public abstract String getMethod();
     public String describe(){
-        return getMethod() + endpoint;
+        return getMethod() + " " + endpoint;
     }
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PolymorphismDemo {
-    static void main() {
+    static void main(String[] args) {
         List<ApiRequest> listOfReq = new ArrayList<>();
         listOfReq.add(new GetUserRequest("2","/users/"));
         listOfReq.add(new CreateUserRequest("/dows"));
