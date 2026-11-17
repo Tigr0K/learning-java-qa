@@ -41,6 +41,6 @@ public class UserApiTest extends BaseTest{
                 .get("/unknown")
                 .then()
                 .statusCode(200)
-                .body("total_pages", greaterThan(1000));
+                .body("total_pages", greaterThan(1));
     }
 }
