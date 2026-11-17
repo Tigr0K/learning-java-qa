@@ -34,12 +34,13 @@ public class UserApiTest extends BaseTest{
     }
 
     @Test
-    void totalPagesGreaterWhenOne(){
+    void shouldReturnTotalPagesGreaterThanOne(){
         given()
                 .log().ifValidationFails()
                 .when()
                 .get("/unknown")
                 .then()
+                .statusCode(200)
                 .body("total_pages", greaterThan(1000));
     }
 }
