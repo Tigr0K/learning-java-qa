@@ -1,22 +1,15 @@
 package com.learning.qa;
 
-
-import io.restassured.RestAssured;
-import org.junit.jupiter.api.BeforeAll;
-import static io.restassured.RestAssured.requestSpecification;
-
-import static io.restassured.RestAssured.given;
+import com.learning.qa.api.ApiClient;
+import com.learning.qa.api.FakeApiClient;
+import org.junit.jupiter.api.BeforeEach;
 
 public class BaseTest {
+    protected ApiClient api;   // тип интерфейса!
+    protected FakeApiClient fakeApi = new FakeApiClient();
 
-    protected static final String BASE_URL = "https://reqres.in/api";
-
-    @BeforeAll
-    static void setup() {
-        RestAssured.baseURI = BASE_URL;
-        requestSpecification = given()
-                .header("x-api-key", "reqres-free-v1")
-                .header("Accept", "application/json");
+    @BeforeEach
+    void setUp() {
+        api = ApiClient.reqres();   // через фабрику
     }
-
 }
